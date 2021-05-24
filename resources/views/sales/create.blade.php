@@ -10,10 +10,6 @@
     <div class="row text-center">
         <h1 class="col-6 mx-auto">@lang('sales.create.header')</h1>
     </div>
-    <?php
-        $new_errors = $errors;
-    ?>
-
     @if ($errors->any())
         <div class="row">
             <div class="col-6 mx-auto alert alert-danger">
@@ -27,7 +23,7 @@
     @endif
     <form class="col-6 mx-auto needs-validation" method="POST" action="{{ route('sales.store') }}" novalidate>
         @csrf
-        <div class="mt-4">
+        <div class="mt-3">
             <label for="darbuotojas" class="form-label">Jus aptarnavęs darbuotojas:</label>
             <select class="form-select" aria-label="Pasirinkti darbuotoją" id="darbuotojas" name="darbuotojas" required>
                 <option value="" selected>Pasirinkite darbuotoją...</option>
@@ -37,54 +33,33 @@
             </select>
             <div class="invalid-feedback">Būtina pasirinkti darbuotoją!</div>
         </div>
-        <div class="mt-4">
-            <label for="sutartiesNr" class="form-label">Sutarties numeris:</label>
+        <div class="mt-3">
+            <label for="sutartiesNr" class="form-label">
+                Sutarties numeris:
+            </label>
             <input type="text" class="form-control" id="sutartiesNr" name="sutartiesNr"
                 placeholder="Įveskite sutarties numerį..." required>
             <div class="invalid-feedback">Būtina įvesti sutarties numerį!</div>
         </div>
-        <div class="mt-4">
-            <label for="greitis" class="form-label">
-                Kaip vertinate aptarnavimo greitį? Nuo 1 (labai blogai) iki 10 (labai gerai)
-            </label>
-            <div id="greitis" class="btn-group w-100" role="group" aria-label="Greitis">
-                @foreach (range(1, 10) as $number)
-                    <input type="radio" class="btn-check" name="greitis" id="greitis{{ $number }}"
-                        value="{{ $number }}" autocomplete="off" onclick="(event) => { }">
-                    <label class="btn btn-outline-primary" for="greitis{{ $number }}">{{ $number }}</label>
-                @endforeach
-            </div>
-            <div class="invalid-feedback">Neįvertinote aptarnavimo greičio</div>
-        </div>
-        <div class="mt-4">
-            <label for="aptarnavimas" class="form-label">
-                Kaip vertinate aptarnavimo kokybę? Nuo 1 (labai blogai) iki 10 (labai gerai)
-            </label>
-            <div id="aptarnavimas" class="btn-group w-100" role="group" aria-label="Aptarnavimas">
-                @foreach (range(1, 10) as $number)
-                    <input type="radio" class="btn-check" name="aptarnavimas" id="aptarnavimas{{ $number }}"
-                        value="{{ $number }}" autocomplete="off">
-                    <label class="btn btn-outline-primary"
-                        for="aptarnavimas{{ $number }}">{{ $number }}</label>
-                @endforeach
-            </div>
-            <div class="invalid-feedback">Neįvertinote aptarnavimo kokybės</div>
-        </div>
-        <div class="mt-4">
-            <label for="rekomendacija" class="form-label">
-                Kokia tikimybė, kad rekomenduosite mus savo draugams? Nuo 1 (labai maža) iki 10 (labai didelė)
-            </label>
-            <div id="rekomendacija" class="btn-group w-100" role="group" aria-label="Rekomendacija">
-                @foreach (range(1, 10) as $number)
-                    <input type="radio" class="btn-check" name="rekomendacija" id="rekomendacija{{ $number }}"
-                        value="{{ $number }}" autocomplete="off">
-                    <label class="btn btn-outline-primary"
-                        for="rekomendacija{{ $number }}">{{ $number }}</label>
-                @endforeach
-            </div>
-            <div class="invalid-feedback">Nenurodėte rekomendacijos tikimybės</div>
-        </div>
-        <div class="mt-4">
+        <x-rating-field
+            id="greitis"
+            label="Kaip vertinate aptarnavimo greitį? Nuo 1 (labai blogai) iki 10 (labai gerai)"
+            range-min="1"
+            range-max="10"
+        />
+        <x-rating-field
+            id="aptarnavimas"
+            label="Kaip vertinate aptarnavimo kokybę? Nuo 1 (labai blogai) iki 10 (labai gerai)"
+            range-min="1"
+            range-max="10"
+        />
+        <x-rating-field
+            id="rekomendacija"
+            label="Kokia tikimybė, kad rekomenduosite mus savo draugams? Nuo 1 (labai maža) iki 10 (labai didelė)"
+            range-min="1"
+            range-max="10"
+        />
+        <div class="mt-3">
             <label for="pastabos" class="form-label">
                 Gal galite pakomentuoti kodėl pateikėte tokius vertinimus?
             </label>
