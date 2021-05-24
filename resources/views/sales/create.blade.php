@@ -7,7 +7,7 @@
     }
 @endphp
 @section('content')
-    <div class="row text-center">
+    <div class="row text-center mt-4">
         <h1 class="col-6 mx-auto">@lang('sales.create.header')</h1>
     </div>
     @if ($errors->any())
