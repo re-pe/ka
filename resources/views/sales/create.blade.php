@@ -38,8 +38,8 @@
                 Sutarties numeris:
             </label>
             <input type="text" class="form-control" id="sutartiesNr" name="sutartiesNr"
-                placeholder="Įveskite sutarties numerį..." required>
-            <div class="invalid-feedback">Būtina įvesti sutarties numerį!</div>
+                placeholder="Įveskite sutarties numerį..." pattern="^[0-9]+$" required>
+            <div class="invalid-feedback">Būtina įvesti sutarties numerį, kurį sudaro skaitmenys!</div>
         </div>
         <x-rating-field
             id="greitis"
@@ -96,7 +96,6 @@
                             event.preventDefault()
                             event.stopPropagation()
                         }
-
                         form.classList.add('was-validated')
                     }, false)
                 })
