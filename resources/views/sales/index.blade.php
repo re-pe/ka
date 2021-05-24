@@ -10,12 +10,12 @@
     <div class="row text-center">
         <h1 class="col-6 mx-auto">@lang('sales.index.header')</h1>
     </div>
-    <div class="row text-center mt-5">
+    <div class="row text-center mt-4">
         <div class="col">
             <a class="mx-auto btn btn-primary" href="{{ route('sales.create') }}">Naujas atsiliepimas</a>
         </div>
     </div>
-    <div class="row text-center mt-5">
+    <div class="row text-center mt-4">
         <div class="accordion col-6 mx-auto" id="saleList">
             @foreach ($saleList as $index => $sale)
                 <div class="accordion-item">
@@ -41,7 +41,7 @@
             @endforeach
         </div>
     </div>
-    <div class="row text-center mt-5">
+    <div class="row text-center mt-4">
         <div class="col">
             <a class="mx-auto btn btn-primary" href="{{ route('sales.create') }}">Naujas atsiliepimas</a>
         </div>
