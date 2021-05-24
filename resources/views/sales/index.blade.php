@@ -30,7 +30,7 @@
                         <div class="accordion-body text-start">
                             <p>Aptarnavimo greitis: {{ $sale->greitis}}</p>
                             <p>Aptarnavimo kokybė: {{ $sale->aptarnavimas}}</p>
-                            <p>Rekomendacijos: {{ $sale->rekomendacija}}</p>
+                            <p>Rekomendacijū tikimybė: {{ $sale->rekomendacija}}</p>
                             <p>Sutikimas: {{ $sale->sutikimas ? __('sales.index.yes') : __('sales.index.no') }}</p>
                             @if ($sale->pastabos)
                                 <p>Pastabos: {{ $sale->pastabos }}</p>
