@@ -12,12 +12,12 @@
 </head>
 
 <body class="bg-gray-200">
-    <div class="container d-flex flex-column min-vh-100">
+    <div class="container-fluid d-flex flex-column min-vh-100">
         <div class="container ">
             @yield('content')
         </div>
-        <footer class="text-center mt-auto">
-            <p><a onclick="return alert('redas(dot)peskaitis(at)gmail(dot).lt')" href="#">&copy; Rėdas Peškaitis</a></p>
+        <footer class="text-center mt-auto p-3 bg-primary">
+            <p class="my-1"><a class="text-white" onclick="return alert('redas(dot)peskaitis(at)gmail(dot).lt')" href="#">&copy; Rėdas Peškaitis</a></p>
         </footer>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
