@@ -12,8 +12,13 @@
 </head>
 
 <body class="bg-gray-200">
-    <div class="container">
-        @yield('content')
+    <div class="container d-flex flex-column min-vh-100">
+        <div class="container ">
+            @yield('content')
+        </div>
+        <footer class="text-center mt-auto">
+            <p><a onclick="return alert('redas(dot)peskaitis(at)gmail(dot).lt')" href="#">&copy; Rėdas Peškaitis</a></p>
+        </footer>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
