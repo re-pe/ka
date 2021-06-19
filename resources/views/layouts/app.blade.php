@@ -16,7 +16,7 @@
         <div class="container ">
             @yield('content')
         </div>
-        <footer class="text-center mt-auto p-3 bg-primary">
+        <footer class="text-center mt-auto p-2 bg-primary">
             <p class="my-1"><a class="text-white" onclick="return alert('redas(dot)peskaitis(at)gmail(dot).lt')" href="#">&copy; Rėdas Peškaitis</a></p>
         </footer>
     </div>
